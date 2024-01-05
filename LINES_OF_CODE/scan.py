@@ -9,16 +9,13 @@ if not os.path.exists(save_folder):
 
 folder = input("Enter folder to scan: ")
 print("FOLDER", folder)
-
 if not os.path.exists(folder):
     print( "Folder {} does not exist!".format(folder))
     sys.exit(0)
 print("Continuing Script.")
 
-
-
-
 file_list =  os.listdir(folder)
+
 files = os.listdir(folder)[1:]
 files_dict = {files[i]: 0 for i in range(len(files))}
 extensions = [f.split(".")[1] for f in files]
@@ -37,7 +34,7 @@ for k in files_dict:
     extensions_dict[ext_key] += files_dict[k]
 
 total = sum(extensions_dict.values())
-total
+
 
 for k in extensions_dict:
     value = (extensions_dict[k]/total)*100
@@ -49,14 +46,10 @@ for k in extensions_dict:
 for k in extensions_dict: 
     print("Language: {}".format(k))
 
-#print(extensions_dict)
-
-
-
-
+# using matplotlib generate some visual representations of the data
 
 plt.figure(figsize = (10, 5))
-plt.title("% of Languages in  {} dir".format(folder),fontsize=30)
+plt.title("% of Languages in  {} directory.".format(folder),fontsize=30)
 
 data = list(extensions_dict.values())
 labels = list(extensions_dict.keys())
