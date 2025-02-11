@@ -1,4 +1,4 @@
-## A simple repository of scripts to assist in mundane tasks.
+## A repository of simple scripts.
 
 
 
